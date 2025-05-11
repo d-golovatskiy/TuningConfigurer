@@ -287,7 +287,7 @@ try:
 except KeyboardInterrupt:
     producer.produce("task-to-configure-result-topic",
                      headers=[("__TypeId__", "org.kubsu.tuning.domain.dto.TaskToConfigureResultDto")],
-                     value=json.dumps({"taskId": parsed_message["requestToConfigureId"], "taskResult": "OK"}))
+                     value=json.dumps({"taskId": parsed_message["requestToConfigureId"], "taskResult": "ERROR"}))
     pass
 finally:
     consumer.close()
